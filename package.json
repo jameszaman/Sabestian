@@ -1,0 +1,11 @@
+{
+  "name": "sabestian",
+  "version": "1.0.0",
+  "description": "This is my own butler.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "James Zaman",
+  "license": "ISC"
+}
