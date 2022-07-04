@@ -17,12 +17,17 @@ module.exports = function officeHoursFunc(args) {
     }
   }
 
-  console.log(args);
-
   // Calculating the remaining time.
   let remainingTime = args[0]; // This is the total time remaining.
   for (let i = 1; i < args.length; i++) {
     remainingTime -= args[i]; // Deduct the other times.
   }
-  console.log(remainingTime);
+
+  if (parseInt(remainingTime / 60) > 0) {
+    console.log(
+      `${parseInt(remainingTime / 60)} hours ${remainingTime % 60} minutes`
+    );
+  } else {
+    console.log(`${remainingTime} minutes`);
+  }
 };
