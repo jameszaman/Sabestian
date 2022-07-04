@@ -1,8 +1,10 @@
 const testFunc = require("./functions/test");
+const officeHoursFunc = require("./functions/officeHours");
 
 // This object is used to map the arguments to the corresponding function.
 const functionObject = {
   test: testFunc,
+  officehours: officeHoursFunc,
 };
 
 if (process.argv.length > 2) {
