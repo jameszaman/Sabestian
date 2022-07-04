@@ -1,7 +1,6 @@
+const testFunc = require("./functions/test");
+
 // This object is used to map the arguments to the corresponding function.
-function testFunc(args) {
-  console.log(args);
-}
 const functionObject = {
   test: testFunc,
 };
