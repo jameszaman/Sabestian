@@ -3,19 +3,21 @@
 // Imports
 const fs = require("fs");
 
-fs.readdir("functions", function (err, files) {
+fs.readdir(`${__dirname}/functions`, function (err, files) {
   if (err) {
     console.error(err);
     return;
   }
   const functionObject = {};
   files.forEach(function (file) {
-    functionObject[file] = require(`./functions/${file}`);
+    functionObject[file] = require(`${__dirname}/functions/${file}`);
   });
 
   if (process.argv.length > 2) {
     functionObject[process.argv[2]](process.argv.slice(3));
   } else {
-    console.error("Command not given");
+    console.log(
+      "Hello! I am Sabestian, you're personal butler!\nUse 'list' command to see all available functions commands."
+    );
   }
 });

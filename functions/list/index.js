@@ -1,6 +1,8 @@
 const fs = require("fs");
+const path = require("path");
+
 module.exports = function () {
-  fs.readdir("functions", function (err, files) {
+  fs.readdir(`${path.join(__dirname, "..")}`, function (err, files) {
     if (err) {
       console.error(err);
     }
