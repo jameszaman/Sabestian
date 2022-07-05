@@ -1,15 +1,21 @@
 #!/usr/bin/env node
-const testFunc = require("./functions/test");
-const officeHoursFunc = require("./functions/officeHours");
 
-// This object is used to map the arguments to the corresponding function.
-const functionObject = {
-  test: testFunc,
-  officehours: officeHoursFunc,
-};
+// Imports
+const fs = require("fs");
 
-if (process.argv.length > 2) {
-  functionObject[process.argv[2]](process.argv.slice(3));
-} else {
-  console.error("Command not given");
-}
+fs.readdir("functions", function (err, files) {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  const functionObject = {};
+  files.forEach(function (file) {
+    functionObject[file] = require(`./functions/${file}`);
+  });
+
+  if (process.argv.length > 2) {
+    functionObject[process.argv[2]](process.argv.slice(3));
+  } else {
+    console.error("Command not given");
+  }
+});
