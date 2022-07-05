@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const testFunc = require("./functions/test");
 const officeHoursFunc = require("./functions/officeHours");
 

@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node index.js"
   },
+  "bin": {
+    "sabestian": "./index.js"
+  },
   "author": "James Zaman",
   "license": "ISC"
 }
