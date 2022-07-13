@@ -1,9 +1,5 @@
-const robot = require("robotjs");
+const { spawn } = require("child_process");
 
 module.exports = function () {
-  robot.mouseToogle("down");
-
-  setTimeout(function () {
-    robot.mouseToogle("up");
-  }, 2000);
+  spawn("python", ["python/mouse_press.py"]);
 };
