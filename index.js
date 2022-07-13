@@ -5,7 +5,6 @@ const fs = require("fs");
 
 if (process.argv.length > 2) {
   try {
-    console.log(`${__dirname}/functions/${process.argv[2]}`);
     const func = require(`${__dirname}/functions/${process.argv[2]}`);
     func(process.argv.slice(3));
   } catch (e) {
